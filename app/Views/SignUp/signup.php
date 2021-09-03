@@ -255,7 +255,7 @@
 
 
 </div>
-<div class="col-12"><button class="btn btn-dark btn-lg" type="submit">Cadastrar</button></div>
+<div class="col-12"><button class="btn btn-dark btn-lg" type="submit">Próximo</button></div>
 
 <div class="progress fixed-bottom">
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 66%"></div>

@@ -19,6 +19,13 @@ body{
   border-bottom: 3px solid #adb5bd;
 }
 
+@media (max-width: 800px){
+    .form-signup {
+    height: 48em;}
+}
+
+
+
 .container-sm {
     margin-right: auto;
 }
