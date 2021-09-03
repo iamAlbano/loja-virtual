@@ -32,6 +32,7 @@ body{
 
 .row{
     padding-top: 1em;
+    
     margin: auto;
     padding-right: 0%;
     justify-content: center;
@@ -42,20 +43,16 @@ body{
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 
-
+.nav-link {
+    --bs-bg-opacity: 1;
+  color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
 
 
 .btn-dark{
   margin-top: 2em;
+  
 }
-
-.progress {
-    
-}
-
-
-
-
 
 
 
