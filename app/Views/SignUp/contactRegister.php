@@ -86,6 +86,16 @@
             <input type="text" name="cep" class="form-control cep-mask" id="validationCustom05" required>
             <div class="invalid-feedback"></div>
         </div>
+        
+    </div>
+    <div class="row" >
+        <div class="col-5">
+            <div class="form-check ">
+                <input class="form-check-input " type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label " for="invalidCheck"> Eu concordo com os termos de uso.</label>
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
         <div class="col-12"><button class="btn btn-dark btn-lg" type="submit">Finalizar</button></div>
     </div>
     

@@ -78,8 +78,12 @@ class SignUp extends BaseController
         ]);  
 
         $this->sessionData($data);
-        $this->show();
+        $this->page('contact', '75%', 'endRegister');
         
+    }
+
+    public function endRegister(){
+        $this->page('end', '99%', 'endRegister');
     }
 
     public function page($active, $progress, $action){
@@ -89,6 +93,7 @@ class SignUp extends BaseController
             'user'=> 'disabled',
             'business' => 'disabled',
             'contact' => 'disabled',
+            'end' => 'disabled',
             'progress' => $progress,
             'action' => $action
         ];

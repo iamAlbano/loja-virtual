@@ -54,12 +54,18 @@
                 <option value="Alimentação">Alimentação</option>
                 <option value="Aúdio">Aúdio</option>
                 <option value="Aúdiovisual">Aúdiovisual</option>
+                <option value="Calçados">Calçados</option>
                 <option value="Eletrodomésticos">Eletrodomésticos</option>
                 <option value="Estética">Estética</option>
                 <option value="Informática">Informática</option>
                 <option value="Infantil">Infantil</option>
-                <option value="PET">PET</option>
+                <option value="Jóias">Jóias e bijuterias</option>
+                <option value="Móveis">Móveis</option>
+                <option value="Petshop">Petshop</option>
+                <option value="Presentes">Presentes</option>
+                <option value="Revistas">Revistas, gibis e mangás</option>
                 <option value="Vestuário">Vestuário</option>
+                <option value="Veículos">Veículos</option>
                 <option value="Outro">Outro</option>
             </select>
             <div class="invalid-feedback"></div>        

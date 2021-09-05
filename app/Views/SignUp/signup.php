@@ -7,9 +7,11 @@
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link <?=$p['home']?>" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Início</button>
     <button class="nav-link  <?=$p['user']?>" id="nav-user-tab" data-bs-toggle="tab" data-bs-target="#nav-user" type="button" role="tab" aria-controls="nav-user" aria-selected="false">Usuário</button>
-    <button class="nav-link <?=$p['business']?>" id="nav-business-tab" data-bs-toggle="tab" data-bs-target="#nav-business" type="button" role="tab" aria-controls="nav-business" aria-selected="true">Negócio</button>
+    <button class="nav-link <?=$p['business']?>" id="nav-business-tab" data-bs-toggle="tab" data-bs-target="#nav-business" type="button" role="tab" aria-controls="nav-business" aria-selected="false">Negócio</button>
     <button class="nav-link <?=$p['contact']?>" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</button>
-    </div>
+    <button class="nav-link <?=$p['end']?>" id="nav-end-tab" data-bs-toggle="tab" data-bs-target="#nav-end" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Finalizar</button>
+    
+  </div>
     </nav>
         
 <form class="row g-3 needs-validation" id="register" method="post" action="<?=$p['action']?>" novalidate>
@@ -49,6 +51,14 @@
 <div class="tab-pane fade show <?=$p['contact']?>" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
 <?php if($p['contact'] == 'active'){ include('contactRegister.php'); }?>
+
+</div>
+
+<!-- end settings -->
+
+<div class="tab-pane fade show <?=$p['end']?>" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+<?php if($p['end'] == 'active'){ include('endRegister.php'); }?>
 
 </div>
 
