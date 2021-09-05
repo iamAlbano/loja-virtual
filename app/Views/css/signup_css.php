@@ -56,7 +56,7 @@ body{
 
 /* check password  */
 
-#password-feedback {
+#password-feedback-lenght {
 
 color: #343a40;
 font-size: 80%;
@@ -66,27 +66,6 @@ font-size: 80%;
 color: #343a40;
 font-size: 80%;
 }
-
-.valid-feedback {
-
-display: block !important;
-color: #198754;
-
-}
-
-.invalid-feedback {
-
-display: block !important;
-color: #dc3545;;
-
-}
-
-.alert-danger {
-display: none;
-
-}
-
-
 
 
 

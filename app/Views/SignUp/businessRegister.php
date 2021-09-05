@@ -51,9 +51,16 @@
         <label for="validationCustom04" class="form-label">Tipo de negócio</label>
             <select class="form-select" id="validationCustom04" name="type" required>
             <option selected disabled value="">Escolha...</option>
-                <option value="Vestuário">Vestuário</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Aúdio">Aúdio</option>
+                <option value="Aúdiovisual">Aúdiovisual</option>
+                <option value="Eletrodomésticos">Eletrodomésticos</option>
+                <option value="Estética">Estética</option>
                 <option value="Informática">Informática</option>
-                <option value="Outros">Outros</option>
+                <option value="Infantil">Infantil</option>
+                <option value="PET">PET</option>
+                <option value="Vestuário">Vestuário</option>
+                <option value="Outro">Outro</option>
             </select>
             <div class="invalid-feedback"></div>        
         </div>

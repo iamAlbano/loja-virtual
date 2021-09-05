@@ -40,7 +40,7 @@
         <div class="col-md-5">
             <label for="senha-cadastro" class="form-label">Senha</label>
             <input type="password" name="password" class="form-control" id="senha-cadastro" required>
-            <div id="password-feedback">A senha deve possuir no mínimo 6 caracteres</div>
+            <div id="password-feedback-lenght">A senha deve possuir no mínimo 6 caracteres</div>
 
         </div>
 

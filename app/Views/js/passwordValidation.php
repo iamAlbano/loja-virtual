@@ -14,36 +14,35 @@
 
         if (valuePw.length < 6) {
             $('#senha-cadastro').removeClass('is-valid');
-            $('#password-feedback').removeClass('invalid-feedback');
-            $('#password-feedback').addClass('invalid-feedback');
             $('#senha-cadastro').addClass('is-invalid');
-
-
+            var elemento = document.getElementById("password-feedback-lenght");
+            elemento.style.color = '#dc3545';
+            
 
         } else {
-
-            // console.log('a senha está ok')
-            $('#password-feedback').removeClass('invalid-feedback');
+            
+            var elemento = document.getElementById("password-feedback-lenght");
+            elemento.style.color = '#198754';
             $('#senha-cadastro').removeClass('is-invalid');
-            $('#password-feedback').addClass('valid-feedback');
             $('#senha-cadastro').addClass('is-valid');
 
 
         }
         if (valuePw !== valuePwConfirm || valuePw.length < 6) {
-            // console.log('senha diferente')
+            
+            var elemento = document.getElementById("password-confirm-feedback");
+            elemento.style.color = '#dc3545';
             $('#confirma-senha-cadastro').removeClass('is-valid');
-            $('#password-confirm-feedback').removeClass('invalid-feedback');
-            $('#password-confirm-feedback').addClass('invalid-feedback');
             $('#confirma-senha-cadastro').addClass('is-invalid');
             fieldCheck = false;
 
         } else {
-            // console.log('a senha está ok')
+            
+            var elemento = document.getElementById("password-confirm-feedback");
+            elemento.style.color = '#198754';
             $('#confirma-senha-cadastro').removeClass('is-invalid');
-            $('#password-confirm-feedback').removeClass('invalid-feedback');
-            $('#password-confirm-feedback').addClass('valid-feedback');
             $('#confirma-senha-cadastro').addClass('is-valid');
+            
             fieldCheck = true;
 
         }
@@ -68,8 +67,7 @@ $('#validation-btn').click(function () {
 
           if (!fieldCheck) {
             event.preventDefault()
-            event.stopPropagation() 
- 
+            event.stopPropagation()       
           }
           
           
