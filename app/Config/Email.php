@@ -9,12 +9,12 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail;
+	public $fromEmail = '<contato.lojavirtual7@gmail.com>';
 
 	/**
 	 * @var string
 	 */
-	public $fromName;
+	public $fromName = 'Minha Loja Virtual';
 
 	/**
 	 * @var string
@@ -33,42 +33,43 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $protocol = 'mail';
+	public $protocol = 'smtp';
 
 	/**
 	 * The server path to Sendmail.
 	 *
 	 * @var string
 	 */
-	public $mailPath = '/usr/sbin/sendmail';
+	public $mailPath = '\"E:\xampp\sendmail\sendmail.exe" -t';
 
 	/**
 	 * SMTP Server Address
 	 *
 	 * @var string
 	 */
-	public $SMTPHost;
+	public $SMTPHost = 'smtp.gmail.com';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser;
+	public $SMTPUser = '<contato.lojavirtual7@gmail.com>';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass;
+	public $SMTPPass = '%composer0*2ToDaY';
+	/* '%composer0*2ToDaY'*/
 
 	/**
 	 * SMTP Port
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 25;
+	public $SMTPPort = 465;
 
 	/**
 	 * SMTP Timeout (in seconds)
@@ -89,7 +90,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPCrypto = 'tls';
+	public $SMTPCrypto = 'ssl';
 
 	/**
 	 * Enable word-wrap
@@ -124,14 +125,14 @@ class Email extends BaseConfig
 	 *
 	 * @var boolean
 	 */
-	public $validate = false;
+	public $validate = true;
 
 	/**
 	 * Email Priority. 1 = highest. 5 = lowest. 3 = normal
 	 *
 	 * @var integer
 	 */
-	public $priority = 3;
+	public $priority = 1;
 
 	/**
 	 * Newline character. (Use “\r\n” to comply with RFC 822)

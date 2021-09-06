@@ -12,6 +12,7 @@ body{
   width: 28em;
   border-radius: 1em;
   
+  
 
 
   margin: auto;
@@ -29,7 +30,7 @@ body{
 }
 
 .button{
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 
