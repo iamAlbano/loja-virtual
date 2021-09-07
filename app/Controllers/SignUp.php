@@ -13,6 +13,13 @@ class SignUp extends BaseController
     
 	}
 
+    public function firstConfig(){
+        echo view('Basic/header');
+		echo view('SignUp/templatechooser');
+		echo view('Basic/footer');
+
+    }
+
     public function autenticated(){
 
         $this->alreadyRegistered();
