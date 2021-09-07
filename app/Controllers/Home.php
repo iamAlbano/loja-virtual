@@ -8,18 +8,28 @@ class Home extends BaseController
 {
 	public function index()
 	{
+		$this->template();
 		
+	}
+
+	public function template(){
+
+		$b = $this->businessInfo();
+
 		echo view('Basic/header');
-		echo view('css/home_css.php');
-		$this->template_1();
+		echo view('css/home_css.php', ['p' => $b]);
+		$this->navbar($b);
+		echo view('templates/navbar/categories');
 		echo view('templates/carousel');
 		echo view('templates/customCard');
 		echo view('Basic/footer');
 	}
 
-	public function template_1(){
+	
 
-		$b = $this->businessInfo();
+
+
+	public function navbar($b){
 		echo view('templates/navbar/navbar_1', ['p' => $b]);
 	}
 

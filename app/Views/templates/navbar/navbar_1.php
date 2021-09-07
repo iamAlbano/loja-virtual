@@ -5,11 +5,11 @@
 
 <div class="bg-white fixed-top ">
     
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-1 border-bottom">
+      <header class="menu d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3  border-bottom">
       
       <div >
         <a class="navbar-brand " style="color: <?=$p->color;?>" href="#">
-            <?=$p->name;?></a>
+           <b> <?=$p->name;?></a> </b>
       </div>
     
         
@@ -25,33 +25,17 @@
       <div class="col-md-4 text-center">
         <button type="button" class="btn btn-sm btn-outline-dark me-2">Entrar</button>
         <button type="button" class="btn btn-sm btn-dark">Cadastre-se</button>
+        <button type="button" class="btn btn-sm shop-cart">
+          <img width="80%" src="https://cdn-icons-png.flaticon.com/512/748/748065.png"></button>
       </div>
+
+     
+        
+     
 
   </header>
 
 
-<ul class="nav justify-content-center" >
 
-  <li class="nav-item">
-    <a class="nav-link link-dark active" aria-current="page" href="#">Insira</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link link-dark" href="#">aqui</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link link-dark" href="#">as</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link link-dark" href="#">suas</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link link-dark" href="#">categorias</a>
-  </li>
-
-</ul>
 
 </div>
