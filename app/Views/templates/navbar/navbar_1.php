@@ -25,7 +25,9 @@
       <div class="col-md-4 text-center">
         <button type="button" class="btn btn-sm btn-outline-dark me-2"
         data-bs-toggle="modal" data-bs-target="#modalSignin">Entrar</button>
-        <button type="button" class="btn btn-sm btn-dark">Cadastre-se</button>
+
+        <button type="button" class="btn btn-sm btn-dark"
+        data-bs-toggle="modal" data-bs-target="#modalSignin">Cadastre-se</button>
         <button type="button" class="btn btn-sm shop-cart">
           <img width="80%" src="https://cdn-icons-png.flaticon.com/512/748/748065.png"></button>
       </div>

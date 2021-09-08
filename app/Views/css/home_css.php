@@ -38,6 +38,22 @@
     border-bottom: 0.2em solid <?=$p->color;?>;
 }
 
+.nav-tabs .nav-link {
+    border: none;
+    color: #212529;
+}
+
+.nav-tabs .nav-link .active{
+    border-bottom: 1em solid <?=$p->color;?>;
+    
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    
+    border-bottom: 0.2em solid <?=$p->color;?>;
+    color: <?=$p->color;?>;
+}
+
 
 
 

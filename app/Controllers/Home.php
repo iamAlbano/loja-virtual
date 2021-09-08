@@ -20,9 +20,11 @@ class Home extends BaseController
 		echo view('css/home_css.php', ['p' => $b]);
 		$this->navbar($b);
 		echo view('templates/navbar/categories');
-		echo view('login/signin');
+		echo view('login/signModal');
 		echo view('templates/carousel');
 		echo view('templates/customCard');
+
+		echo view('Basic/homeFooter');
 		echo view('Basic/footer');
 	}
 
