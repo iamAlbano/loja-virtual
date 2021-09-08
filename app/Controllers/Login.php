@@ -20,6 +20,7 @@ class Login extends BaseController
 	}
 
 	public function frontend($alert){
+		$this->alreadyRegistered();
 		echo view('Basic/header');
         echo view('css/login_css');
 		echo view('templates/alert', ['data' => $alert]);
@@ -27,7 +28,19 @@ class Login extends BaseController
 		echo view('Basic/footer');
 	}
 
+	private function alreadyRegistered(){
+        $db = DB::connect();
+        $data = $db->query("SELECT firstName from admin")->getResult();
+        $db->close();
+       if(count($data) == 0){
+        header('Location: /lojaVirtual/public/signup');
+        die();
+        } 
+    }
+
 	public function autentication(){
+
+		$this->alreadyRegistered();
 
 		$login = [
 		'email' => $this->request->getPost('email'),
@@ -96,7 +109,7 @@ class Login extends BaseController
 		session()->set($session);
 	}
 
-	public function show(){
+	private function show(){
 		echo '<pre>';
 		print_r(session()->get());
 		echo '</pre>';

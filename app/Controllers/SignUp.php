@@ -116,15 +116,15 @@ class SignUp extends BaseController
         $db = DB::connect();
 
 		$parameter = [
-			'name' => 'My style', 
+			'styleName' => 'My style', 
 			'color' => session()->color,
 			'logo' => session()->logo
 		];
 
         $data = $db->query("INSERT INTO `style`
-		(`name`, `color`, `logo`) 
+		(`styleName`, `color`, `logo`) 
 		VALUES(
-			:name:,
+			:styleName:,
 			:color:,
 			:logo:
 		)", $parameter);

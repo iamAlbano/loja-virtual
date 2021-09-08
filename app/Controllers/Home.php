@@ -8,14 +8,15 @@ class Home extends BaseController
 {
 	public function index()
 	{
+		$this->alreadyRegistered();
 		$this->template();
 		
 	}
 
 	public function template(){
 
+		$this->alreadyRegistered();
 		$b = $this->businessInfo();
-
 		echo view('Basic/header');
 		echo view('css/home_css.php', ['p' => $b]);
 		$this->navbar($b);
@@ -23,16 +24,23 @@ class Home extends BaseController
 		echo view('login/signModal');
 		echo view('templates/carousel');
 		echo view('templates/customCard');
-
 		echo view('Basic/homeFooter');
 		echo view('Basic/footer');
 	}
 
-	
+	private function alreadyRegistered(){
+        $db = DB::connect();
+        $data = $db->query("SELECT firstName from admin")->getResult();
+        $db->close();
+       if(count($data) == 0){
+        header('Location: /lojaVirtual/public/signup');
+        die();
+        } 
+    }
 
 
+	private function navbar($b){
 
-	public function navbar($b){
 		echo view('templates/navbar/navbar_1', ['p' => $b]);
 	}
 

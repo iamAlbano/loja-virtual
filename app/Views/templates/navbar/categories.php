@@ -2,23 +2,23 @@
 <ul class="categories nav bg-light justify-content-center shadow" >
 
   <li class="nav-item">
-    <a class="nav-link link-dark active" aria-current="page" href="#">Início</a>
+    <a class="nav-link link-dark departament active" aria-current="page" href="#">Início</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link link-dark" href="#">Em alta</a>
+    <a class="nav-link link-dark departament" href="#">Em alta</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link link-dark" href="#">Promoção</a>
+    <a class="nav-link link-dark departament" href="#">Promoção</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link link-dark" href="#">Mais vendidos</a>
+    <a class="nav-link link-dark departament" href="#">Mais vendidos</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link link-dark" href="#">Novidades</a>
+    <a class="nav-link link-dark departament" href="#">Novidades</a>
   </li>
 
 </ul>

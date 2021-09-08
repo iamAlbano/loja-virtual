@@ -28,13 +28,13 @@
         width: 10em;
 }
 
-.nav-item{
+.departament{
     border-bottom: 0.2em solid white;
     transition: border-bottom 1s;
     
 }
 
-.nav-item:hover{
+.departament:hover{
     border-bottom: 0.2em solid <?=$p->color;?>;
 }
 

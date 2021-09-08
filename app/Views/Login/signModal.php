@@ -51,7 +51,9 @@
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                               <label class="form-check-label" for="flexCheckDefault">
-                                <small>Li e concordo com os termos de serviço.</small>
+                                <small>Li e concordo com os termos de
+                                   <a href="#" class="link-dark">serviço</a> e 
+                                   <a href="#" class="link-dark">privacidade.</a></small>
                               </label>
                             </div>
                           </div>
