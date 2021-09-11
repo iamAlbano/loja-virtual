@@ -1,7 +1,7 @@
-<div class="modal fade modal-signin  bg-transparent py-5" tabindex="-1" role="dialog" id="modalSignin">
-  <div class="modal-dialog" role="document">
-     <div class="modal-content rounded-5 shadow">
-        <div class="modal-header p-5 pb-4 border-bottom-0">
+<div class="modal fade modal-signin  bg-transparent py-5 " tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog " role="document">
+     <div class="modal-content rounded-5 shadow ">
+        <div class="modal-header p-5 pb-4 border-bottom-0 ">
                   <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                       <button class="nav-link active " id="nav-signin-tab" data-bs-toggle="tab" data-bs-target="#nav-signin" type="button" role="tab" aria-controls="nav-signin" aria-selected="true">Entrar</button>
@@ -12,7 +12,7 @@
          </div>
 
 
-                <div class="modal-body p-5 pt-0 tab-content" id="nav-tabContent">
+                <div class="modal-body p-5 pt-0 tab-content " id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab">
                       <form id="signin" class="">
                           <div class="form-floating mb-3">
@@ -29,7 +29,7 @@
                       </form>
                     </div>
 
-                    <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+                    <div class="tab-pane fade " id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
                     <form id="signup" class="">
                           <div class="form-floating mb-3">
                                   <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com" required>
