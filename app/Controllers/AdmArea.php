@@ -3,27 +3,62 @@
 namespace App\Controllers;
 
 use Config\Database as DB;
+use App\Models\admin;
+use App\Models\business;
 
 class AdmArea extends BaseController
 {
 	public function index()
 	{
+
 		$this->verify();
-    $this->frontend();
+    $this->frontend('home');
 		
 	}
 
-  private function frontend(){
+  private function frontend($active){
 
-    $admin = $this->adminInfo();
+    $admin = new admin();
 
     echo view('Basic/header');
     echo view('css/adm_css.php');
-    echo view('admArea/sidebar', ['a' => $admin]);
-    echo view('admArea/content', ['a' => $admin]);
+    echo view('admArea/sidebar', ['a' => $admin, 'active' => $active]);
+    echo view('admArea/content', ['a' => $admin, 'active' => $active]);
     echo view('js/passwordValidation');
 		echo view('Basic/footer');
   }
+
+
+
+  public function updateAdmin(){
+
+    $this->verify();
+
+    $admin = new admin();
+
+    $info = [
+      'firstName' => $this->request->getPost('firstName'),
+      'lastName' => $this->request->getPost('lastName'),
+      'email' => $this->request->getPost('email'),
+      'cpf' => $this->request->getPost('cpf'),
+      'cpfAtual' => session()->cpf,
+      'emailAtual' => session()->email];
+
+      $admin->update($info);
+
+      $admin->session();
+
+      $alert = [
+				'title' => 'Sucesso!',
+				'message' => 'Dados atualizados com sucesso.',
+			];
+
+      echo view('templates/modal', ['data' => $alert]);
+      $this->frontend('user'); 
+
+  }
+
+
 
 	private function verify(){
         $db = DB::connect();
@@ -48,58 +83,6 @@ class AdmArea extends BaseController
     die();
   }
 
-  private function adminInfo(){
-    $db = DB::connect();
-		$user = $db->query("SELECT * FROM admin")->getResultObject();
-		$db->close();
-		return $user[0];
-  }
-
-  private function businessInfo(){
-		$db = DB::connect();
-		$business = $db->query("SELECT * FROM business JOIN style")->getResultObject();
-		$db->close();
-		return $business[0];
-	}
-
-
-
-  public function updateAdmin(){
-    $this->verify();
-
-    $info = [
-      'firstName' => $this->request->getPost('firstName'),
-      'lastName' => $this->request->getPost('lastName'),
-      'email' => $this->request->getPost('email'),
-      'cpf' => $this->request->getPost('cpf'),
-      'cpfAtual' => session()->cpf];
-
-    $db = DB::connect();
-    $cpf = $db->query("SELECT * FROM `admin` WHERE cpf = :cpf: AND email != :email:", $info)->getResult();
-    $db->close();
-
-    if(count($cpf) == 0){
-
-    $db = DB::connect();
-    $data = $db->query("UPDATE `admin` SET
-		`firstName`= :firstName:, 
-    `lastName`= :lastName:, 
-    `email`= :email:,
-    `cpf` = :cpf:
-		WHERE `cpf` = :cpfAtual: ", $info);
-    $db->close();
-
-    session()->set([
-      'firstName' => $this->request->getPost('firstName'),
-      'lastName' => $this->request->getPost('lastName'),
-      'email' => $this->request->getPost('email'),
-      'cpf' => $this->request->getPost('cpf'),
-    ]);
-
-    header('location: /lojaVirtual/public/AdmArea');
-    die();
-
-    } 
-
-  }
+ 
+  
 }

@@ -45,7 +45,7 @@
 
               </div>  
 
-              <div class="col-10 d-flex justify-content-center">
+              <div class="d-flex justify-content-center">
                 <button class="btn btn-dark" type="submit">Salvar alterações</button>
               </div>
 
@@ -58,31 +58,37 @@
       <div class="tab-pane fade show" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
           <div class="row justify-content-center" id="password-field">
             <form method="post" action="#">
-                    <div class="col-md-10">
-                        <label  class="form-label">Senha atual</label>
-                        <input type="password" name="actual-password" class="form-control" required>
-                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <label  class="form-label">Senha atual</label>
+                            <input type="password" name="actual-password" class="form-control" required>
+                        </div>
+                      </div>
+                  
 
-                    <div class="col-md-5">
-                        <label for="senha-cadastro" class="form-label">Nova senha</label>
-                        <input type="password" name="password" class="form-control" id="senha-cadastro" required>
-                        <div id="password-feedback-lenght">
-                          A senha deve possuir no mínimo 6 caracteres
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-5">
+                            <label for="senha-cadastro" class="form-label">Nova senha</label>
+                            <input type="password" name="password" class="form-control" id="senha-cadastro" required>
+                            <div id="password-feedback-lenght">
+                              A senha deve possuir no mínimo 6 caracteres
+                            </div>
+
                         </div>
 
-                    </div>
+                        <div class="col-md-5">
 
-                    <div class="col-md-5">
+                            <label for="confirma-senha-cadastro" class="form-label">Confirmar nova senha</label>
+                            <input type="password" class="form-control"  id="confirma-senha-cadastro" required>
+                            <div id="password-confirm-feedback">
+                              As senhas devem ser iguais
+                            </div>
 
-                        <label for="confirma-senha-cadastro" class="form-label">Confirmar nova senha</label>
-                        <input type="password" class="form-control"  id="confirma-senha-cadastro" required>
-                        <div id="password-confirm-feedback">
-                          As senhas devem ser iguais
                         </div>
-
                     </div>
 
-                    <div class="col-10 d-flex justify-content-center">
+                    <div class="d-flex justify-content-center">
                       <button class="btn btn-dark" type="submit">Salvar alterações</button>
                     </div>
     
