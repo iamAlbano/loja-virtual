@@ -111,6 +111,11 @@ background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
     color: #212529;
 }
 
+.alert-box {
+  background-color: rgba(50,50,50, 0.7);
+  padding-bottom: 100%;
+}
+
 
 
 
