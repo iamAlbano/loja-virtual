@@ -23,6 +23,10 @@
             <?php include('tabs/layout.php');?>
             </div>
 
+            <div class="tab-pane fade show tab <?php if($active =='business'){echo 'active';}?>" id="v-pills-business" role="tabpanel" aria-labelledby="v-pills-business-tab">
+                <?php include('tabs/business.php');?>
+            </div>
+
             <div class="tab-pane fade show tab <?php if($active =='contact'){echo 'active';}?>" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
                 <?php include('tabs/contact.php');?>
             </div>
@@ -35,9 +39,7 @@
                 <?php include('tabs/user.php');?>
             </div>
 
-            <div class="tab-pane fade show tab <?php if($active =='config'){echo 'active';}?>" id="v-pills-config" role="tabpanel" aria-labelledby="v-pills-config-tab">
-                <?php include('tabs/config.php');?>
-            </div>
+           
 
         
 </div>
