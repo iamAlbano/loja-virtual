@@ -44,18 +44,35 @@ class AdmArea extends BaseController
       'cpfAtual' => session()->cpf,
       'emailAtual' => session()->email];
 
-      $admin->update($info);
+      $result = $admin->update($info);
 
-      $admin->session();
-
-      $alert = [
-				'title' => 'Sucesso!',
-				'message' => 'Dados atualizados com sucesso.',
-			];
+      $alert = $this->alertModal($result);
 
       echo view('templates/modal', ['data' => $alert]);
       $this->frontend('user'); 
 
+  }
+
+  private function alertModal($result){
+    if($result == 'email'){
+      $alert = [
+        'title' => 'Ops..',
+        'message' => 'Não foi possível atualizar seus dados, o e-mail inserido já está cadastrado no sistema.',
+      ];
+
+    } else if($result == 'cpf'){
+      $alert = [
+        'title' => 'Ops..',
+        'message' => 'Não foi possível atualizar seus dados, o cpf inserido já está cadastrado no sistema.',
+      ];
+    } else {
+      $alert = [
+        'title' => 'Sucesso!',
+        'message' => 'Dados atualizados com sucesso.',
+      ];
+    }
+
+    return $alert;
   }
 
 

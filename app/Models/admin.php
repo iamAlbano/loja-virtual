@@ -63,20 +63,61 @@ class admin {
 
   public function update($info){
 
-    $db = DB::connect();
-
-
-
     
+
+    if($info['cpf'] != $info['cpfAtual']){
+      $result = $this->verifyCPF($info);
+
+      if($result == FALSE){
+        return 'cpf';
+      }
+    }
+
+    if($info['email'] != $info['emailAtual']){
+      $result = $this->verifyEmail($info);
+
+      if($result == FALSE){
+        return 'email';
+      }
+    }
+
+    $db = DB::connect();
     $data = $db->query("UPDATE `admin` SET
       `firstName`= :firstName:, 
       `lastName`= :lastName:, 
       `email`= :email:,
       `cpf` = :cpf:
-	WHERE `cpf` = :cpfAtual: ", $info);
+	  WHERE `cpf` = :cpfAtual: ", $info);
     $db->close();
+    $this->session();
+    return 'ok';
 
   }
+
+  public function verifyCPF($info){
+    $db = DB::connect();
+    $data = $db->query("SELECT cpf from `admin` WHERE cpf = :cpf:", $info)->getResult();
+    $db->close();
+      if(count($data) > 0){ 
+        return FALSE;
+       } else {
+         return TRUE;
+       }
+  }
+
+  public function verifyEmail($info){
+    $db = DB::connect();
+    $data = $db->query("SELECT email from `admin` WHERE email = :email:", $info)->getResult();
+    $db->close();
+      if(count($data) > 0){ 
+        return FALSE;
+       } else {
+         return TRUE;
+       }
+
+  }
+
+
 
   public function session(){
 
