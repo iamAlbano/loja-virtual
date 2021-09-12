@@ -53,28 +53,25 @@ class AdmArea extends BaseController
 
   }
 
-  private function alertModal($result){
-    if($result == 'email'){
-      $alert = [
-        'title' => 'Ops..',
-        'message' => 'Não foi possível atualizar seus dados, o e-mail inserido já está cadastrado no sistema.',
-      ];
+  public function updatePassword(){
 
-    } else if($result == 'cpf'){
-      $alert = [
-        'title' => 'Ops..',
-        'message' => 'Não foi possível atualizar seus dados, o cpf inserido já está cadastrado no sistema.',
-      ];
-    } else {
-      $alert = [
-        'title' => 'Sucesso!',
-        'message' => 'Dados atualizados com sucesso.',
-      ];
-    }
+    $this->verify();
 
-    return $alert;
+    $admin = new admin();
+
+    $info = [
+      'cpf' => session()->get('cpf'),
+      'actualPass' => $this->request->getPost('actual-password'),
+      'newPass' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)];
+
+      $result = $admin->updatePassword($info);
+
+      $alert = $this->alertModal($result);
+
+      echo view('templates/modal', ['data' => $alert]);
+      $this->frontend('user'); 
+
   }
-
 
 
 	private function verify(){
@@ -93,7 +90,37 @@ class AdmArea extends BaseController
 		}
     }
 
-	public function logout()
+	
+  private function alertModal($result){
+    if($result == 'email'){
+      $alert = [
+        'title' => 'Ops..',
+        'message' => 'Não foi possível atualizar seus dados, o e-mail inserido já está cadastrado no sistema.',
+      ];
+
+    } else if($result == 'cpf'){
+      $alert = [
+        'title' => 'Ops..',
+        'message' => 'Não foi possível atualizar seus dados, o cpf inserido já está cadastrado no sistema.',
+      ];
+    } else if($result == 'wrongPass'){
+      $alert = [
+        'title' => 'Ops..',
+        'message' => 'Não foi possível atualizar seus dados, a senha atual informada está incorreta.',
+      ];
+    
+     } else {
+      $alert = [
+        'title' => 'Sucesso!',
+        'message' => 'Dados atualizados com sucesso.',
+      ];
+    }
+
+    return $alert;
+  }
+
+
+  public function logout()
   {
     session()->destroy();
     header("Location: /lojaVirtual/public/signup");

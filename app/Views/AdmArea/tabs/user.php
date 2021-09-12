@@ -57,7 +57,7 @@
 
       <div class="tab-pane fade show" id="nav-pass" role="tabpanel" aria-labelledby="nav-pass-tab">
           <div class="row justify-content-center" id="password-field">
-            <form method="post" action="#">
+            <form method="post" action="/lojaVirtual/public/AdmArea/updatePassword">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label  class="form-label">Senha atual</label>

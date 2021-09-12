@@ -117,6 +117,38 @@ class admin {
 
   }
 
+  public function updatePassword($data){
+
+    $verify = $this->verifyPassword($data);
+
+    if($verify == FALSE){
+      return 'wrongPass';
+    }
+
+    $db = DB::connect();
+    $data = $db->query("UPDATE `admin` SET
+      `password`= :newPass:
+	  WHERE `cpf` = :cpf: ", $data);
+    $db->close();
+
+
+
+  }
+
+  private function verifyPassword($info){
+    $db = DB::connect();
+    $data = $db->query("SELECT password from `admin` WHERE cpf = :cpf:", $info)->getResult();
+    $db->close();
+      if(password_verify($info['actualPass'], $data[0]->password)){ 
+        return TRUE;
+       } else {
+         return FALSE;
+       }
+
+  }
+
+  
+
 
 
   public function session(){
