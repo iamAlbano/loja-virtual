@@ -29,13 +29,7 @@ class admin {
 
   public function __construct(){
 
-    $admin = $this->adminInfo();
-
-    $this->__set('cpf', $admin->cpf);
-    $this->__set('email', $admin->email);
-    $this->__set('firstName', $admin->firstName);
-    $this->__set('lastName', $admin->lastName);
-    $this->__set('password', $admin->password);
+    $this->updateClass();
 
   }
 

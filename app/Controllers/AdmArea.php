@@ -28,6 +28,24 @@ class AdmArea extends BaseController
 		echo view('Basic/footer');
   }
 
+  public function updateBusiness(){
+    $data = [
+            'businessName' => $this->request->getPost('businessName'),
+            'fantasyName' => $this->request->getPost('fantasyName'),
+            'cnpj' => $this->request->getPost('cnpj'),
+            'type' => $this->request->getPost('type')];
+
+    $b = new business();
+
+    $b->updateBusiness($data);
+
+    $alert = $this->alertModal('');
+
+      echo view('templates/modal', ['data' => $alert]);
+      $this->frontend('business'); 
+
+  }
+
 
 
   public function updateAdmin(){
