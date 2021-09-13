@@ -16,6 +16,12 @@ class business {
     private $facebook;
     private $instagram;
     private $twitter;
+    private $street;
+    private $number;
+    private $city;
+    private $neighborhood;
+    private $state;
+    private $cep;
 
   public function __set($property, $value)
   {
@@ -52,6 +58,12 @@ class business {
     $this->__set('facebook', $b->facebook);
     $this->__set('instagram', $b->instagram);
     $this->__set('twitter', $b->twitter);
+    $this->__set('street', $b->street);
+    $this->__set('number', $b->number);
+    $this->__set('neighborhood', $b->neighborhood);
+    $this->__set('city', $b->city);
+    $this->__set('state', $b->state);
+    $this->__set('cep', $b->cep);
   }
 
   public function sessionBusiness(){
@@ -76,6 +88,20 @@ class business {
         'facebook' => $this->facebook,
         'instagram' => $this->instagram,
         'twitter' => $this->twitter
+      ]);
+  }
+
+  public function sessionAddress(){
+
+    $this->updateClass();
+
+    session()->set([
+        'street' => $this->street,
+        'neighborhood' => $this->neighborhood,
+        'number' => $this->number,
+        'city' => $this->city,
+        'state' => $this->state,
+        'cep' => $this->cep, 
       ]);
   }
 
@@ -115,6 +141,22 @@ public function updateContact($info){
   $db->close();
 
   $this->sessionContact();
+}
+
+public function updateAddress($info){
+  $db = DB::connect();
+
+  $data = $db->query("UPDATE `business` SET
+    `street`= :street:, 
+    `neighborhood`= :neighborhood:, 
+    `number`= :number:,
+    `state`= :state:,
+    `city` = :city:,
+    `cep` = :cep:
+  WHERE `cnpj` = :cnpj: ", $info);
+  $db->close();
+
+  $this->sessionAddress();
 }
 
 

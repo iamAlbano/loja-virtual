@@ -10,7 +10,7 @@
 
 <div class="tab-content " id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <form name="adressUpdate" method="post" action="#" >
+        <form name="adressUpdate" method="post" action="/lojaVirtual/public/AdmArea/updateAddress" >
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <label   class="form-label">Rua</label>
@@ -19,7 +19,7 @@
 
                 <div class="col-md-5">
                     <label for="validationCustomNeighborhood" class="form-label">Bairro</label>
-                    <input type="text" name="lastName" value="<?=session()->neighborhood?>" placeholder="<?=session()->neighborhood?>" class="form-control" id="validationCustomNeighborhood"  required>
+                    <input type="text" name="neighborhood" value="<?=session()->neighborhood?>" placeholder="<?=session()->neighborhood?>" class="form-control" id="validationCustomNeighborhood"  required>
 
                 </div>
             </div>

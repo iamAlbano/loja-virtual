@@ -67,6 +67,27 @@ class AdmArea extends BaseController
 
   }
 
+  public function updateAddress(){
+    $data = [
+            'cnpj' => session()->get('cnpj'),
+            'street' => $this->request->getPost('street'),
+            'neighborhood' => $this->request->getPost('neighborhood'),
+            'number' => $this->request->getPost('number'),
+            'city' => $this->request->getPost('city'),
+            'state' => $this->request->getPost('state'),
+            'cep' => $this->request->getPost('cep'),];
+
+    $b = new business();
+
+    $b->updateAddress($data);
+
+    $alert = $this->alertModal('');
+
+      echo view('templates/modal', ['data' => $alert]);
+      $this->frontend('address'); 
+
+  }
+
 
 
   public function updateAdmin(){
