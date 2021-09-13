@@ -66,6 +66,19 @@ class business {
       ]);
   }
 
+  public function sessionContact(){
+
+    $this->updateClass();
+
+    session()->set([
+        'phone1' => $this->phone1,
+        'phone2' => $this->phone2,
+        'facebook' => $this->facebook,
+        'instagram' => $this->instagram,
+        'twitter' => $this->twitter
+      ]);
+  }
+
 
   public function businessInfo(){
     $db = DB::connect();
@@ -87,6 +100,21 @@ public function updateBusiness($info){
   $db->close();
 
   $this->sessionBusiness();
+}
+
+public function updateContact($info){
+  $db = DB::connect();
+
+  $data = $db->query("UPDATE `business` SET
+    `phone1`= :phone1:, 
+    `phone2`= :phone2:, 
+    `facebook`= :facebook:,
+    `instagram` = :instagram:,
+    `twitter` = :twitter:
+  WHERE `cnpj` = :cnpj: ", $info);
+  $db->close();
+
+  $this->sessionContact();
 }
 
 

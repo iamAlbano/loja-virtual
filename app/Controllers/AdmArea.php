@@ -47,6 +47,27 @@ class AdmArea extends BaseController
   }
 
 
+  public function updateContact(){
+    $data = [
+            'cnpj' => session()->get('cnpj'),
+            'phone1' => $this->request->getPost('phone1'),
+            'phone2' => $this->request->getPost('phone2'),
+            'facebook' => $this->request->getPost('facebook'),
+            'instagram' => $this->request->getPost('instagram'),
+            'twitter' => $this->request->getPost('twitter')];
+
+    $b = new business();
+
+    $b->updateContact($data);
+
+    $alert = $this->alertModal('');
+
+      echo view('templates/modal', ['data' => $alert]);
+      $this->frontend('contact'); 
+
+  }
+
+
 
   public function updateAdmin(){
 

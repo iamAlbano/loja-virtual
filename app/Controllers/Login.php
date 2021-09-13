@@ -103,7 +103,10 @@ class Login extends BaseController
 			'number' => $business[0]->number,
 			'city' => $business[0]->city,
 			'state' => $business[0]->state,
-			'cep' => $business[0]->cep
+			'cep' => $business[0]->cep,
+			'facebook' => $business[0]->facebook,
+			'instagram' => $business[0]->instagram,
+			'twitter' => $business[0]->twitter
 		];
 
 		session()->set($session);
